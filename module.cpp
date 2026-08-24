@@ -7,7 +7,7 @@ using namespace std;
 
 PriorityQueue::PriorityQueue(const string& path) : file(path) {}
 
-// --- persistence ---
+//  persist
 
 void PriorityQueue::load() {
     h.clear();
@@ -26,7 +26,7 @@ void PriorityQueue::save() {
         f << e.pri << " " << e.val << "\n";
 }
 
-// --- heap helpers (min-heap by .pri) ---
+// min heap
 
 void PriorityQueue::up(int i) {
     while (i > 0) {
@@ -49,7 +49,7 @@ void PriorityQueue::down(int i) {
     }
 }
 
-// --- public API ---
+// apii
 
 void PriorityQueue::insert(const string& val, int pri) {
     load();
